@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\LienHeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['prefix' => 'lien-he'], function () {
+    Route::get('/', [LienHeController::class, 'index']);
+    Route::get('/{id}', [LienHeController::class, 'show']);
+    Route::post('/', [LienHeController::class, 'store']);
+    Route::put('/{id}', [LienHeController::class, 'update']);
+    Route::delete('/{id}', [LienHeController::class, 'destroy']);
 });
