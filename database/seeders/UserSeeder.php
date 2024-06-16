@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;   // Thêm dòng này
-use Illuminate\Support\Facades\Hash; // Thêm dòng này
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class UserSeeder extends Seeder
 {
     /**
@@ -14,7 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('NguoiDung')->insert([
+        DB::table('NguoiDung')->insertOrIgnore([
             [
                 'TenDangNhap' => 'thanhthao',
                 'MatKhau' => Hash::make('password'),
@@ -29,7 +30,20 @@ class UserSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Thêm nhiều người dùng khác nếu cần
+            [
+                'TenDangNhap' => 'user3',
+                'MatKhau' => Hash::make('password3'),
+                'Email' => 'user3@example.com',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'TenDangNhap' => 'user4',
+                'MatKhau' => Hash::make('password4'),
+                'Email' => 'user4@example.com',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
         echo "Seeder run successfully!";
     }
