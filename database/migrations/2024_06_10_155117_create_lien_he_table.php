@@ -18,7 +18,7 @@ class CreateLienHeTable extends Migration
             $table->string('TenDangNhap', 50);
             $table->string('Email', 100);
             $table->text('NoiDung');
-            $table->timestamp('NgayTao')->useCurrent();
+            $table->timestamps();
         });
     }
 
