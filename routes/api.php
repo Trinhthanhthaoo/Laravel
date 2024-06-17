@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\API\MentorController;
 use App\Http\Controllers\API\LienHeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +25,11 @@ Route::group(['prefix' => 'lien-he'], function () {
     Route::post('/', [LienHeController::class, 'store']);
     Route::put('/{id}', [LienHeController::class, 'update']);
     Route::delete('/{id}', [LienHeController::class, 'destroy']);
+});
+Route::group(['prefix' => 'mentor'], function () {
+    Route::get('/', [MentorController::class, 'index']);
+    Route::get('/{id}', [MentorController::class, 'show']);
+    Route::post('/', [MentorController::class, 'store']);
+    Route::put('/{id}', [MentorController::class, 'update']);
+    Route::delete('/{id}', [MentorController::class, 'destroy']);
 });
