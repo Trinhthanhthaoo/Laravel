@@ -23,6 +23,7 @@ class CreateTaiLieuCongDongTable extends Migration
             $table->timestamp('NgayTao')->useCurrent();
             $table->foreign('IDMentor')->references('id')->on('Mentor')->onDelete('set null');
             $table->foreign('IDMentee')->references('id')->on('Mentee')->onDelete('set null');
+            $table->timestamps();
         });
     }
 
