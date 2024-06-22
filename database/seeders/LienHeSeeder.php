@@ -17,16 +17,16 @@ class LienHeSeeder extends Seeder
       
         DB::table('LienHe')->insert([
             [
-                'TenDangNhap' => 'admin',
+                'TenDangNhap' => 'thanhthao',
                 'Email' => 'admin@example.com',
                 'NoiDung' => 'Xin chào bạn, cảm ơn bạn đã quan tâm đến VKUMentor.',
-                'NgayTao' => now(),
+               
             ],
             [
                 'TenDangNhap' => 'user1',
                 'Email' => 'user1@example.com',
                 'NoiDung' => 'Tôi muốn tham gia trở thành một mentor cho VKU.',
-                'NgayTao' => now(),
+           
             ],
            
         ]);

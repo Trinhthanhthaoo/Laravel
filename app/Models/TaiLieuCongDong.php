@@ -9,7 +9,7 @@ class TaiLieuCongDong extends Model
 {
     use HasFactory;
 
-    protected $table = 'tai_lieu_cong_dong';
+    protected $table = 'tailieucongdong';
 
     protected $fillable = [
         'IDMentor',

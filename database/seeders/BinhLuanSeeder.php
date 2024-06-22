@@ -17,13 +17,13 @@ class BinhLuanSeeder extends Seeder
      
         DB::table('BinhLuan')->insert([
             [
-                'IDTaiLieu' => 1,
+                'IDTaiLieu' => 73,
                 'IDNguoiDung' => 1,
                 'NoiDung' => 'Bài viết rất hữu ích, cảm ơn bạn đã chia sẻ!',
                 'NgayTao' => now(),
             ],
             [
-                'IDTaiLieu' => 2,
+                'IDTaiLieu' => 74,
                 'IDNguoiDung' => 2,
                 'NoiDung' => 'Mình có một câu hỏi về nội dung này, bạn có thể giải đáp giúp mình không?',
                 'NgayTao' => now(),

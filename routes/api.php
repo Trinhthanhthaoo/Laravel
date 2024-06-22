@@ -1,11 +1,13 @@
 <?php
 use App\Http\Controllers\API\MentorController;
+use App\Http\Controllers\API\DanhSachMentorMenteeController;
 use App\Http\Controllers\API\LienHeController;
 use App\Http\Controllers\API\TaiLieuCongDongController;
+use App\Http\Controllers\API\NguoiDungController;
+use App\Http\Controllers\API\MenteeController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\DanhSachMentorMenteeController;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -45,7 +47,7 @@ Route::group(['prefix' => 'DanhSachMentorMentee'], function () {
 });
 
 
-Route::group(['prefix' => 'tai-lieu-cong-dong'], function () {
+Route::group(['prefix' => 'tailieucongdong'], function () {
     Route::get('/', [TaiLieuCongDongController::class, 'index']);
     Route::post('/', [TaiLieuCongDongController::class, 'store']);
     Route::get('/{id}', [TaiLieuCongDongController::class, 'show']);
@@ -61,4 +63,21 @@ Route::group(['prefix' => 'cuoc-thi'], function () {
     Route::get('/{id}', [CuocThiController::class, 'show']);
     Route::put('/{id}', [CuocThiController::class, 'update']);
     Route::delete('/{id}', [CuocThiController::class, 'destroy']);
+});
+
+Route::group(['prefix' => 'NguoiDung'], function () {
+    Route::get('/', [NguoiDungController::class, 'index']);
+    Route::post('/', [NguoiDungController::class, 'store']);
+    Route::get('/{id}', [NguoiDungController::class, 'show']);
+    Route::put('/{id}', [NguoiDungController::class, 'update']);
+    Route::delete('/{id}', [NguoiDungController::class, 'destroy']);
+    Route::post('/login', [NguoiDungController::class, 'login']);
+});
+
+Route::prefix('mentee')->group(function () {
+    Route::get('/', [MenteeController::class, 'index']); // GET api/mentee (lấy danh sách mentee)
+    Route::post('/', [MenteeController::class, 'store']); // POST api/mentee (tạo mới mentee)
+    Route::get('/{id}', [MenteeController::class, 'show']); // GET api/mentee/{id} (lấy thông tin mentee theo id)
+    Route::put('/{id}', [MenteeController::class, 'update']); // PUT api/mentee/{id} (cập nhật thông tin mentee)
+    Route::delete('/{id}', [MenteeController::class, 'destroy']); // DELETE api/mentee/{id} (xóa mentee)
 });
