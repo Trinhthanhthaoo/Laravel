@@ -23,7 +23,7 @@ class TaiLieuCongDongController extends Controller
             $query->where('IDMentee', $menteeId);
         }
 
-        return $query->paginate($request->get('limit', 10));
+        return $query->paginate($request->get('limit', 20));
     }
     public function store(Request $request)
     {

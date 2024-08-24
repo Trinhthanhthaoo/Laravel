@@ -27,6 +27,14 @@ class TaiLieuCongDongSeeder extends Seeder
             [
                 'IDMentor' => 1,
                 'IDMentee' => null,
+                'TieuDe' => 'Hướng dẫn lập trình C# cơ bản',
+                'NoiDung' => 'Đây là nội dung hướng dẫn lập trình C# cơ bản...',
+                'TrangThai' => 'approved',
+                'NgayTao' => now(),
+            ],
+            [
+                'IDMentor' => 1,
+                'IDMentee' => null,
                 'TieuDe' => 'Hướng dẫn sử dụng Laravel',
                 'NoiDung' => 'Nội dung hướng dẫn sử dụng Laravel để xây dựng ứng dụng web...',
                 'TrangThai' => 'pending',
@@ -59,8 +67,48 @@ class TaiLieuCongDongSeeder extends Seeder
             [
                 'IDMentor' => 2,
                 'IDMentee' => null,
+                'TieuDe' => 'Khởi nghiệp và đổi mới sáng tạo',
+                'NoiDung' => 'Cung cấp các kiến thức nền tảng về đổi mới sáng tạo, nh thần khởi nghiệp, khởi nghiệp, khởi sự kinh doanh, từ đó nâng cao nhận thức của sinh viên và hình thành ...',
+                'TrangThai' => 'approved',
+                'NgayTao' => now(),
+            ],
+            [
+                'IDMentor' => 2,
+                'IDMentee' => null,
+                'TieuDe' => 'Thủ thuật marketing',
+                'NoiDung' => '10 CÁCH LÀM MARKETING HIỆU QUẢ GIÚP TỐI ƯU CHI PHÍ CHO DOANH NGHIỆP...',
+                'TrangThai' => 'approved',
+                'NgayTao' => now(),
+            ],
+            [
+                'IDMentor' => 2,
+                'IDMentee' => null,
                 'TieuDe' => 'Hướng dẫn lập trình JavaScript',
                 'NoiDung' => 'Nội dung hướng dẫn lập trình JavaScript để phát triển web...',
+                'TrangThai' => 'pending',
+                'NgayTao' => now(),
+            ],
+            [
+                'IDMentor' => 2,
+                'IDMentee' => null,
+                'TieuDe' => 'Hướng dẫn lập trình HTML/CSS',
+                'NoiDung' => 'Nội dung hướng dẫn lập trình JavaScript để phát triển web...',
+                'TrangThai' => 'pending',
+                'NgayTao' => now(),
+            ],
+            [
+                'IDMentor' => 2,
+                'IDMentee' => null,
+                'TieuDe' => 'Làm quen với tailwindcss ',
+                'NoiDung' => 'Nội dung hướng dẫn lập trình css với tailwindcss',
+                'TrangThai' => 'pending',
+                'NgayTao' => now(),
+            ],
+            [
+                'IDMentor' => 2,
+                'IDMentee' => null,
+                'TieuDe' => 'Hướng dẫn lập trình bootstrap',
+                'NoiDung' => 'Nội dung hướng dẫn lập trình css với bootstrap để phát triển web...',
                 'TrangThai' => 'pending',
                 'NgayTao' => now(),
             ],
@@ -96,22 +144,7 @@ class TaiLieuCongDongSeeder extends Seeder
                 'TrangThai' => 'pending',
                 'NgayTao' => now(),
             ],
-            [
-                'IDMentor' => 1,
-                'IDMentee' => null,
-                'TieuDe' => 'Hướng dẫn sử dụng React.js',
-                'NoiDung' => 'Nội dung hướng dẫn sử dụng React.js để xây dựng giao diện người dùng...',
-                'TrangThai' => 'approved',
-                'NgayTao' => now(),
-            ],
-            [
-                'IDMentor' => 2,
-                'IDMentee' => null,
-                'TieuDe' => 'Hướng dẫn lập trình Ruby on Rails',
-                'NoiDung' => 'Nội dung hướng dẫn lập trình web với Ruby on Rails...',
-                'TrangThai' => 'pending',
-                'NgayTao' => now(),
-            ],
+            
         ]);
     }
 }
