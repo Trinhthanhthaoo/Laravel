@@ -14,7 +14,10 @@ class TaiLieuCongDongController extends Controller
 
         $mentorId = $request->get('mentor_id');
         $menteeId = $request->get('mentee_id');
-
+        //search
+         $keyword = $request->get('keyword');
+    $monHoc = $request->get('mon_hoc');
+    //end search
         if ($mentorId) {
             $query->where('IDMentor', $mentorId);
         }
@@ -22,9 +25,29 @@ class TaiLieuCongDongController extends Controller
         if ($menteeId) {
             $query->where('IDMentee', $menteeId);
         }
+        if ($keyword) {
+        $query->where(function($query) use ($keyword) {
+            $query->where('TieuDe', 'like', "%{$keyword}%")
+                  ->orWhere('NoiDung', 'like', "%{$keyword}%");
+        });
+    }
 
+    if ($monHoc) {
+        $query->where('MonHoc', $monHoc);
+    }
+    if ($mentorId = $request->get('mentor_id')) {
+        $query->where('IDMentor', $mentorId);
+    }
+
+    // Filter by Mentee ID
+    if ($menteeId = $request->get('mentee_id')) {
+        $query->where('IDMentee', $menteeId);
+    }
         return $query->paginate($request->get('limit', 20));
     }
+
+
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [

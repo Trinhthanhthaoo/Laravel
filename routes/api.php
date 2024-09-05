@@ -72,6 +72,8 @@ Route::group(['prefix' => 'NguoiDung'], function () {
     Route::put('/{id}', [NguoiDungController::class, 'update']);
     Route::delete('/{id}', [NguoiDungController::class, 'destroy']);
     Route::post('/login', [NguoiDungController::class, 'login']);
+    Route::post('/register', [NguoiDungController::class, 'register']);
+
 });
 
 Route::prefix('mentee')->group(function () {

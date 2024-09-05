@@ -103,4 +103,22 @@ class NguoiDungController extends Controller
         // }
     }
 
+   public function register(Request $request)
+{
+    $request->validate([
+        'TenDangNhap' => 'required|string',
+        'MatKhau' => 'required|string',
+        'Email' => 'required|string|email|unique:NguoiDung',
+    ]);
+
+    // Chèn dữ liệu vào bảng
+    $inserted = DB::table("nguoidung")->insert([
+        "TenDangNhap" => $request["TenDangNhap"],
+        "MatKhau" => $request["MatKhau"], // Mật khẩu không được mã hóa , nếu mã hóa dùng bcrypt()
+        "Email" => $request["Email"],
+    ]);
+
+    // Kiểm tra xem việc chèn có thành công không
+    return response()->json($inserted ? true : false);
+}
 }
