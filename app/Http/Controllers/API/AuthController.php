@@ -16,14 +16,12 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         // Validate the request data
-        $validator = Validator::make($request->all(), [
-            'Login' => 'required|string|unique:nguoidung,email|unique:nguoidung,TenDangNhap',
-            'MatKhau' => 'required|string|min:6',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
-        }
+        $this->validatorCheck(
+            Validator::make($request->all(), [
+                'Login' => 'required|string|unique:nguoidung,email|unique:nguoidung,TenDangNhap',
+                'MatKhau' => 'required|string|min:6',
+            ])
+        );
 
         // Determine if the login is an email or username
         $login = $request->input('Login');
@@ -117,7 +115,6 @@ class AuthController extends Controller
     }
     public function user(Request $request)
     {
-       
         return response()->json(Auth::user());
     }
 }
