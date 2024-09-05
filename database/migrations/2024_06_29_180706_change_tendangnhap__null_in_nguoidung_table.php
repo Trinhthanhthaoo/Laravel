@@ -13,7 +13,7 @@ class ChangeTendangnhapNullInNguoidungTable extends Migration
      */
     public function up()
     {
-        Schema::table('nguoidung', function (Blueprint $table) {
+        Schema::table('NguoiDung', function (Blueprint $table) {
             $table->string('Email')->nullable()->change();
             $table->string('TenDangNhap')->nullable()->change();
         });
@@ -26,7 +26,7 @@ class ChangeTendangnhapNullInNguoidungTable extends Migration
      */
     public function down()
     {
-        Schema::table('nguoidung', function (Blueprint $table) {
+        Schema::table('NguoiDung', function (Blueprint $table) {
             $table->string('Email')->nullable(false)->change();
             $table->string('TenDangNhap')->nullable(false)->change();
         });
